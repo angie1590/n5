@@ -1,0 +1,98 @@
+[
+    {
+        "type": "Cron",
+        "displayName": "Cron",
+        "description": "Triggers periodically based on a specified CRON expression.",
+        "category": "Timers",
+        "properties": [
+            {
+                "name": "CronExpression",
+                "type": "System.String",
+                "isReadOnly": false,
+                "isBrowsable": true
+            }
+        ],
+        "inputProperties": [
+            {
+                "name": "CronExpression",
+                "type": "System.String",
+                "label": "Cron Expression"
+            }
+        ]
+    },
+    {
+        "type": "HTTP",
+        "displayName": "HTTP Trigger",
+        "description": "Triggers an action based on an HTTP request.",
+        "category": "Webhooks",
+        "properties": [
+            {
+                "name": "RequestURL",
+                "type": "System.String",
+                "isReadOnly": false,
+                "isBrowsable": true
+            },
+            {
+                "name": "Method",
+                "type": "System.String",
+                "isReadOnly": false,
+                "isBrowsable": true,
+                "allowedValues": [
+                    "GET",
+                    "POST",
+                    "PUT",
+                    "DELETE"
+                ]
+            }
+        ],
+        "inputProperties": [
+            {
+                "name": "RequestURL",
+                "type": "System.String",
+                "label": "Request URL",
+                "defaultValue": "http://example.com"
+            },
+            {
+                "name": "Method",
+                "type": "System.String",
+                "label": "HTTP Method",
+                "defaultValue": "GET"
+            }
+        ]
+    },
+    {
+        "type": "FileWatcher",
+        "displayName": "File Watcher",
+        "description": "Triggers when a file is created or modified in a specified directory.",
+        "category": "Filesystem",
+        "properties": [
+            {
+                "name": "DirectoryPath",
+                "type": "System.String",
+                "isReadOnly": false,
+                "isBrowsable": true
+            },
+            {
+                "name": "Filter",
+                "type": "System.String",
+                "isReadOnly": false,
+                "isBrowsable": true,
+                "defaultValue": "*.txt"
+            }
+        ],
+        "inputProperties": [
+            {
+                "name": "DirectoryPath",
+                "type": "System.String",
+                "label": "Directory Path",
+                "defaultValue": "/path/to/directory"
+            },
+            {
+                "name": "Filter",
+                "type": "System.String",
+                "label": "File Filter",
+                "defaultValue": "*.txt"
+            }
+        ]
+    }
+]
